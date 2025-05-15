@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hotel Haven</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body class="font-sans bg-gray-100">
+
+  <!-- Navbar -->
+  <header class="bg-white shadow sticky top-0 z-50">
+    <nav class="container mx-auto flex justify-between items-center p-4">
+      <div class="text-xl font-bold text-blue-600">Hotel Haven</div>
+      <ul class="flex gap-6 font-medium text-gray-700">
+        <li><a href="#welcome" class="hover:text-blue-500">Welcome</a></li>
+        <li><a href="#services" class="hover:text-blue-500">Services</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Section 1: Welcome -->
+  <section id="welcome" class="py-20 bg-cover bg-center text-white" style="background-image: url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1500&q=80');">
+    <div class="container mx-auto text-center bg-black bg-opacity-50 p-10 rounded">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Welcome to Hotel Haven</h1>
+      <p class="text-lg md:text-xl">Experience luxury, comfort, and unmatched service in the heart of the city. Your perfect getaway begins here.</p>
+    </div>
+  </section>
+
+  <!-- Section 2: Services -->
+  <section id="services" class="py-20 bg-white">
+    <div class="container mx-auto px-6 md:px-20 text-center">
+      <h2 class="text-3xl font-bold text-gray-800 mb-6">Our Services</h2>
+      <p class="text-gray-600 mb-10">Enjoy top-tier hospitality and facilities designed to make your stay memorable.</p>
+
+      <!-- Service Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        <div class="bg-blue-100 p-6 rounded shadow hover:shadow-lg transition">
+          <h3 class="text-xl font-semibold mb-2 text-blue-700">Luxurious Rooms</h3>
+          <p>Elegant, spacious, and fully equipped rooms with stunning views and modern amenities.</p>
+        </div>
+        <div class="bg-blue-100 p-6 rounded shadow hover:shadow-lg transition">
+          <h3 class="text-xl font-semibold mb-2 text-blue-700">Fine Dining</h3>
+          <p>Indulge in gourmet meals crafted by world-class chefs in our beautiful restaurant.</p>
+        </div>
+        <div class="bg-blue-100 p-6 rounded shadow hover:shadow-lg transition">
+          <h3 class="text-xl font-semibold mb-2 text-blue-700">Spa & Wellness</h3>
+          <p>Relax and rejuvenate in our spa with treatments tailored to your personal wellness.</p>
+        </div>
+      </div>
+
+      <!-- Room Photos Gallery -->
+      <h3 class="text-2xl font-semibold text-gray-800 mb-4">Room Gallery</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Room 1" class="rounded shadow hover:scale-105 transition duration-300" />
+        <img src="https://images.unsplash.com/photo-1582719478183-d0d53bda3f91?auto=format&fit=crop&w=800&q=80" alt="Room 2" class="rounded shadow hover:scale-105 transition duration-300" />
+        <img src="https://images.unsplash.com/photo-1589987607627-4d7b00a41d2d?auto=format&fit=crop&w=800&q=80" alt="Room 3" class="rounded shadow hover:scale-105 transition duration-300" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Optional JavaScript for more interactivity -->
+  <script>
+    // Reserved for future interactive features (e.g., sliders, nav toggles).
+  </script>
+
+</body>
+</html>
