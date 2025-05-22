@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tab Navigation Webpage</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background: #f4f4f4;
+      padding-top: 60px;
+    }
+
+    /* Navbar */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #333;
+      z-index: 1000;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+    }
+
+    .navbar ul li {
+      margin: 10px;
+    }
+
+    .navbar ul li a {
+      color: white;
+      text-decoration: none;
+      padding: 10px;
+    }
+
+    .navbar ul li a:hover {
+      background-color: #555;
+      border-radius: 5px;
+    }
+
+    /* Sections */
+    .content-section {
+      padding: 40px;
+      max-width: 800px;
+      margin: auto;
+      background: white;
+      margin-bottom: 30px;
+      border-radius: 10px;
+    }
+
+    /* Tabs */
+    .tabs {
+      margin-top: 20px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .tab-button {
+      padding: 10px 20px;
+      background: #eee;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .tab-button.active {
+      background: #333;
+      color: white;
+    }
+
+    .tab-content {
+      display: none;
+      margin-top: 20px;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    @media (max-width: 600px) {
+      .tabs {
+        flex-direction: column;
+      }
+
+      .navbar ul {
+        flex-direction: column;
+      }
+
+      .navbar ul li {
+        margin: 5px;
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="#section1">Section 1</a></li>
+      <li><a href="#section2">Section 2</a></li>
+    </ul>
+  </nav>
+
+  <!-- Section 1 -->
+  <section id="section1" class="content-section">
+    <h2>Section 1: Tabs Example</h2>
+    <div class="tabs">
+      <button class="tab-button active" data-tab="tab1">Tab 1</button>
+      <button class="tab-button" data-tab="tab2">Tab 2</button>
+    </div>
+    <div class="tab-content active" id="tab1">
+      <p>This is the content for Tab 1 in Section 1.</p>
+    </div>
+    <div class="tab-content" id="tab2">
+      <p>This is the content for Tab 2 in Section 1.</p>
+    </div>
+  </section>
+
+  <!-- Section 2 -->
+  <section id="section2" class="content-section">
+    <h2>Section 2: More Tabs</h2>
+    <div class="tabs">
+      <button class="tab-button active" data-tab="tab3">Tab 3</button>
+      <button class="tab-button" data-tab="tab4">Tab 4</button>
+    </div>
+    <div class="tab-content active" id="tab3">
+      <p>This is the content for Tab 3 in Section 2.</p>
+    </div>
+    <div class="tab-content" id="tab4">
+      <p>This is the content for Tab 4 in Section 2.</p>
+    </div>
+  </section>
+
+  <script>
+    // Tab switch functionality
+    document.querySelectorAll('.tabs').forEach(tabGroup => {
+      const buttons = tabGroup.querySelectorAll('.tab-button');
+      buttons.forEach(button => {
+        button.addEventListener('click', () => {
+          const parent = button.closest('.content-section');
+          const tabId = button.getAttribute('data-tab');
+
+          parent.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+          parent.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+
+          button.classList.add('active');
+          parent.querySelector(#${tabId}).classList.add('active');
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
