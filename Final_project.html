@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Finance Tracker</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {},
+      },
+    }
+  </script>
+
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Custom Styles -->
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body class="font-sans bg-gray-100 scroll-smooth">
+
+  <!-- Navbar -->
+  <nav class="bg-blue-800 text-white p-4 fixed w-full top-0 shadow-md z-50">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-xl font-bold">Finance Tracker</h1>
+      <ul class="flex space-x-4">
+        <li><a href="#overview" class="hover:text-yellow-300">Overview</a></li>
+        <li><a href="#graphs" class="hover:text-yellow-300">Graphs</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Section 1: Income/Expense Overview -->
+  <section id="overview" class="pt-24 px-4 py-12 bg-gray-100 min-h-screen">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold mb-6 text-blue-800">Income & Expense Overview</h2>
+      <p class="mb-4">Track your income and expenses with real-time updates. Manage categories like salary, groceries, rent, etc.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="p-6 bg-white shadow-md rounded">
+          <h3 class="text-xl font-semibold mb-2">Income</h3>
+          <p class="text-green-600 font-bold text-2xl">$5,000</p>
+        </div>
+        <div class="p-6 bg-white shadow-md rounded">
+          <h3 class="text-xl font-semibold mb-2">Expenses</h3>
+          <p class="text-red-600 font-bold text-2xl">$2,500</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Graphs -->
+  <section id="graphs" class="px-4 py-12 bg-white min-h-screen">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold mb-6 text-blue-800">Graphs & Reports</h2>
+      <p class="mb-6">Visualize your financial health using interactive charts and monthly reports.</p>
+      <div class="p-6 bg-gray-100 rounded shadow">
+        <canvas id="financeChart" height="200"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <!-- Chart Script -->
+  <script>
+    const ctx = document.getElementById('financeChart').getContext('2d');
+    const financeChart = new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        labels: ['Income', 'Expenses'],
+        datasets: [{
+          label: 'Finance Overview',
+          data: [5000, 2500],
+          backgroundColor: ['#10B981', '#EF4444'],
+          borderColor: ['#ffffff'],
+          borderWidth: 2
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            position: 'bottom'
+          }
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>
